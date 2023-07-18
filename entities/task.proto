@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package entity.task;
+
+message TaskTemplate {
+  string id = 1;
+  string name = 2;
+  // 前置任务是否完成的查询api
+  string preposeStatusQueryApi = 3;
+  // 任务已完成的状态设置
+  string taskFinishSetApi = 4;
+  int64 createTime = 5;
+  int64 updateTime = 6;
+}
+
+message Task {
+  enum Status {
+    CREATED = 0;
+    FINISHED = 1;
+  }
+  string id = 1;
+  string templateId = 2;
+  string params = 3;
+  Status status = 4;
+  // 重试次数
+  int32 tryTimes = 5;
+  int64 createTime = 6;
+  int64 updateTime = 7;
+}

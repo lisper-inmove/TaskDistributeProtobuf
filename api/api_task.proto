@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package api.task;
+
+
+message CreateTaskTemplateRequest {
+  string name = 1;
+  string preposeStatusQueryApi = 2;
+  string taskFinishSetApi = 3;
+}
+
+message UpdateTaskTemplateRequest {}
+
+message DeleteTaskTemplateRequest {}
+
+message ListTaskTemplateRequest {}
+
+message TaskTemplateCommonResponse {
+  string id = 1;
+  string name = 2;
+}
+
+message CreateTaskRequest {
+  string templateId = 1;
+  string params = 2;
+}
