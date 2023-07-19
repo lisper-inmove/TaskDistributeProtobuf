@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package entity.task;
 
+// db.task_templates.ensureIndex({"name": 1}, {"unique": true})
+// db.task_templates.ensureIndex({"id": 1}, {"unique": true})
 message TaskTemplate {
   string id = 1;
   string name = 2;
@@ -13,6 +15,8 @@ message TaskTemplate {
   int64 updateTime = 6;
 }
 
+// db.tasks.ensureIndex({"id": 1}, {"unique": true})
+// db.tasks.ensureIndex({"uniqueId": 1}, {"unique": true})
 message Task {
   enum Status {
     CREATED = 0;
@@ -23,7 +27,9 @@ message Task {
   string params = 3;
   Status status = 4;
   // 重试次数
-  int32 tryTimes = 5;
+  int32 alreadyTryTimes = 5;
   int64 createTime = 6;
   int64 updateTime = 7;
+  // 创建任务时由参数传过来
+  string uniqueId = 8;
 }

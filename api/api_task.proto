@@ -13,7 +13,13 @@ message UpdateTaskTemplateRequest {}
 
 message DeleteTaskTemplateRequest {}
 
-message ListTaskTemplateRequest {}
+message ListTaskTemplateRequest {
+
+}
+
+message ListTaskTemplateResponse {
+  repeated TaskTemplateCommonResponse taskList = 1;
+}
 
 message TaskTemplateCommonResponse {
   string id = 1;
@@ -23,4 +29,5 @@ message TaskTemplateCommonResponse {
 message CreateTaskRequest {
   string templateId = 1;
   string params = 2;
+  string uniqueId = 3;
 }
