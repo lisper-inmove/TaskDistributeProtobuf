@@ -23,7 +23,8 @@ message Task {
     FINISHED = 1;
   }
   string id = 1;
-  string params = 3;
+  string preposeParams = 3;
+  string finishParams = 10;
   Status status = 4;
   // 重试次数
   int32 alreadyTryTimes = 5;
