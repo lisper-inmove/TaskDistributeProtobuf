@@ -11,7 +11,9 @@ message CreateTaskTemplateRequest {
 
 message UpdateTaskTemplateRequest {}
 
-message DeleteTaskTemplateRequest {}
+message DeleteTaskTemplateRequest {
+  string id = 1;
+}
 
 message ListTaskTemplateRequest {
 
