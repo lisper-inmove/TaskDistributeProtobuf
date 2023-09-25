@@ -13,6 +13,9 @@ message TaskTemplate {
   string taskFinishSetApi = 4;
   int64 createTime = 5;
   int64 updateTime = 6;
+  string tokenName = 7;
+  string tokenValue = 8;
+  string successAssert = 9;
 }
 
 // db.tasks.ensureIndex({"id": 1}, {"unique": true})

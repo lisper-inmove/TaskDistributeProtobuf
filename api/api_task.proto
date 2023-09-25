@@ -7,6 +7,9 @@ message CreateTaskTemplateRequest {
   string name = 1;
   string preposeStatusQueryApi = 2;
   string taskFinishSetApi = 3;
+  string tokenName = 4;
+  string tokenValue = 5;
+  string successAssert = 6;
 }
 
 message UpdateTaskTemplateRequest {}
